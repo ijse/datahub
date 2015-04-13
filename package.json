@@ -1,0 +1,22 @@
+{
+  "name": "dataHub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --report spec test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.coding.net:ijse/dataHub.git"
+  },
+  "keywords": [
+    "data"
+  ],
+  "author": "ijse",
+  "license": "Apache",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
