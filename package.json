@@ -17,6 +17,7 @@
   "author": "ijse",
   "license": "Apache",
   "dependencies": {
+    "datahub-plugin-ping": "git://git.coding.net/ijse/datahub-plugin-ping.git",
     "eventemitter2": "^0.4.14",
     "express": "^4.12.3"
   }
