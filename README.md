@@ -20,5 +20,3 @@ npm test
 npm start
 ```
 
-
-
