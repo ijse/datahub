@@ -33,3 +33,14 @@ var server = app.listen(3000, 'localhost', function () {
   log('Listening at http://%s:%s', host, port);
 
 });
+
+function onExit() {
+  hub.emit('destroy');
+  server.close();
+  // hub.emit.apply(hub.emit, ['destroy'].concat(arguments) );
+}
+process.on('exit', onExit);
+process.on('SIGINT', onExit);
+process.on('SIGTERM', onExit);
+// process.on('uncaughtException', onExit);
+
