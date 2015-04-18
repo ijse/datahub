@@ -1,10 +1,9 @@
+var log = require('debug')('datahub:main');
+
 var express = require('express');
 var app = express();
 
 var pluginLoader = require('./lib/pluginLoader');
-
-// var EventEmitter = require('events').EventEmitter;
-// var hub = new EventEmitter();
 
 var hub = require('./lib/Hub');
 
@@ -18,6 +17,11 @@ app.get('/', function (req, res) {
   hub.emit('plugin:ping:setGreeting', Date.now());
 });
 
+// list all plugins as json
+app.get('/plugins', function(req, res) {
+  res.json(pluginMap);
+});
+
 // initialize plugins
 hub.emit('plugin-init');
 
@@ -26,6 +30,6 @@ var server = app.listen(3000, 'localhost', function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('dataHub app listening at http://%s:%s', host, port);
+  log('Listening at http://%s:%s', host, port);
 
 });
