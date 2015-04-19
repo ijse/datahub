@@ -12,7 +12,7 @@ dataHub Roadmap
 - [ ] auto reload when new plugin installed
 - [ ] more useful events emitted for plugins
 - [ ] plugin dependencies each other
-- [ ] plugin settings management
+- [x] plugin settings management
 
 ### plugins
 
