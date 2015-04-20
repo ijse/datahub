@@ -20,6 +20,7 @@ app.get('/', function (req, res) {
 });
 
 // list all plugins as json
+//  as formated plugin name is the key name and plugin data is the value
 app.get('/plugins', function(req, res) {
   res.json(pluginMap);
 });
