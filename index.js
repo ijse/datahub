@@ -3,6 +3,8 @@ var log = require('debug')('datahub:main');
 var express = require('express');
 var app = express();
 
+var config = require('./configs');
+
 var pluginLoader = require('./lib/pluginLoader');
 
 var hub = require('./lib/Hub');
@@ -25,7 +27,7 @@ app.get('/plugins', function(req, res) {
 // initialize plugins
 hub.emit('plugin-init');
 
-var server = app.listen(3000, 'localhost', function () {
+var server = app.listen(config.port, function () {
 
   var host = server.address().address;
   var port = server.address().port;
@@ -41,7 +43,6 @@ function onExit() {
   try {
     server.close();
   } catch(e) {}
-  // hub.emit.apply(hub.emit, ['destroy'].concat(arguments) );
 }
 process.on('exit', onExit);
 process.on('SIGINT', onExit);
