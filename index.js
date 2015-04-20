@@ -30,7 +30,7 @@ var server = app.listen(3000, 'localhost', function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  log('Listening at http://%s:%s', host, port);
+  console.log('Listening at http://%s:%s', host, port);
 
 });
 
