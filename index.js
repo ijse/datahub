@@ -40,6 +40,7 @@ var server = app.listen(config.port, function () {
 });
 
 function onExit() {
+  console.log();
   hub.emit('destroy');
   try {
     server.close();
