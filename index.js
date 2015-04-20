@@ -36,7 +36,9 @@ var server = app.listen(3000, 'localhost', function () {
 
 function onExit() {
   hub.emit('destroy');
-  server.close();
+  try {
+    server.close();
+  } catch(e) {}
   // hub.emit.apply(hub.emit, ['destroy'].concat(arguments) );
 }
 process.on('exit', onExit);
