@@ -4,6 +4,10 @@ var express = require('express');
 var app = express();
 
 var config = require('./configs');
+var config = require('nconf');
+config.argv();
+config.env({separator: '_' });
+config.file('./configs/index.json');
 
 var pluginLoader = require('./lib/pluginLoader');
 
@@ -28,7 +32,7 @@ app.get('/plugins', function(req, res) {
 // initialize plugins
 hub.emit('plugin-init');
 
-var server = app.listen(config.port, function () {
+var server = app.listen(config.get('port'), function() {
 
   var host = server.address().address;
   var port = server.address().port;
