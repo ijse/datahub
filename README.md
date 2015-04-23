@@ -9,7 +9,7 @@ dataHub
 ### Develop
 ```
 npm install
-
+npm test
 npm start
 ```
 
