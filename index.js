@@ -5,8 +5,8 @@ var app = require('./lib/server');
 
 app.set('server', app.listen(config.port, function () {
 
-  var host = server.address().address;
-  var port = server.address().port;
+  var host = this.address().address;
+  var port = this.address().port;
 
   console.log('\n\t====================================');
   console.log('\tListening at http://%s:%s', host, port);
@@ -14,3 +14,18 @@ app.set('server', app.listen(config.port, function () {
 
 }));
 
+/**
+ * When exit, do some cleanning
+ */
+function onExit() {
+  console.log();
+  app.get('hub').emit('destroy');
+  var server = app.get('server');
+  try{
+    server.close();
+  } catch(e) {}
+}
+process.on('exit', onExit);
+process.on('SIGINT', onExit);
+process.on('SIGTERM', onExit);
+// process.on('uncaughtException', onExit);

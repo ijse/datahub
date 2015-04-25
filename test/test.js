@@ -1,3 +1,5 @@
+var should = require('should');
+var muk = require('muk');
 
 var request = require('supertest');
 var server = require('../lib/server');
@@ -40,6 +42,36 @@ describe('Test DataHub', function() {
       .expect(/pong/i)
       .expect(/new-value/)
       .end(done);
+  });
+
+  it('handle error when plugin throws exception', function() {
+    var hub = server.get('hub');
+    var pingPlugin = server.get('plugins')['ping'];
+
+    muk(console, 'error', function(msg, d, pid, cname, fname, ename, emsg, estack) {
+      if(arguments.length !== 8) return;
+
+      msg.should.be.eql('\n[%s][pid: %s][%s][%s] %s: %s \nError Stack:\n  %s');
+      pid.should.be.eql(process.pid);
+      ename.should.be.eql('testError');
+    });
+
+    try {
+      hub.emit('plugin:ping:testError');
+    } catch(e) {
+      e.message.should.be.equal('boom');
+      e.data.test.should.be.equal('name');
+      muk.restore()
+    }
+
+  });
+
+  it('do some clean when onExit runs by process exiting', function() {
+    // var instance = server.listen(19919);
+    var hub = server.get('hub');
+    hub.listeners('plugin:ping:*').length.should.be.above(0);
+    hub.emit('destroy');
+    hub.listeners('plugin:ping:*').length.should.be.equal(0);
   });
 
 });
