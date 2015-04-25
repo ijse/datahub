@@ -13,6 +13,8 @@ dataHub Roadmap
 - [ ] more useful events emitted for plugins
 - [ ] plugin dependencies each other
 - [x] plugin settings management
+- [x] test suits and js coverage
+- [ ] modularize datahub
 
 ### plugins
 
