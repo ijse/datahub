@@ -7,7 +7,7 @@
     "start": "node index.js",
     "install-plugin": "node install.js",
     "test": "mocha --reporter spec ./test/test.js",
-    "coverage": "istanbul cover _mocha ./test/test.js"
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/test.js"
   },
   "repository": {
     "type": "git",
