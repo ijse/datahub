@@ -15,6 +15,7 @@ dataHub
 ```
 npm install
 npm test
+npm run coverage
 npm start
 ```
 
