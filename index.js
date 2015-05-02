@@ -1,4 +1,4 @@
-
+require("babel/register");
 var config = require('./configs');
 
 var app = require('./lib/server')(config);

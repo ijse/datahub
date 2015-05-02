@@ -1,3 +1,4 @@
+require("babel/register");
 var should = require('should');
 var muk = require('muk');
 
@@ -27,7 +28,7 @@ describe('Test DataHub', function() {
       .get('/ping')
       .expect(200)
       .expect(/pong/i)
-      .expect(/Jack/)
+      .expect(/haha/)
       .end(done);
   });
 
