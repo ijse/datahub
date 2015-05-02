@@ -23,6 +23,28 @@ describe('Test DataHub', function() {
       .end(done);
   });
 
+  it('load no plugin and everything should be ok', function(done) {
+    var server = Server({ pluginDir: 'test/empty_folder' });
+
+    request(server)
+      .get('/plugins')
+      .expect(200)
+      .expect({})
+      .end(done);
+  });
+
+  it('load more than one plugins ', function(done) {
+    var server = Server({ pluginDir: 'test/two_plugin' });
+    request(server)
+      .get('/plugins')
+      .expect(200)
+      // .expect({})
+      .end(function(err, resp) {
+        console.log(resp.body);
+        done(err);
+      });
+  })
+
   it('request plugin api and get default greeting value ', function(done) {
     request(server)
       .get('/ping')
