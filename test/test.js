@@ -2,10 +2,10 @@ var should = require('should');
 var muk = require('muk');
 
 var request = require('supertest');
-var server = require('../lib/server');
+var Server = require('../lib/server');
 
 describe('Test DataHub', function() {
-
+  var server = Server();
   it('request / and get hello world', function(done) {
     request(server)
       .get('/')

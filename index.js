@@ -1,7 +1,7 @@
 
 var config = require('./configs');
 
-var app = require('./lib/server');
+var app = require('./lib/server')(config);
 
 app.set('server', app.listen(config.port, function () {
 
