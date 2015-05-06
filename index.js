@@ -1,6 +1,8 @@
 require("babel/register");
 var config = require('./configs');
 
+//todo: merge configurations with arguments, env and files
+
 var app = require('./lib/server')(config);
 
 app.set('server', app.listen(config.port, function () {
