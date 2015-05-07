@@ -10,15 +10,16 @@ dataHub Roadmap
 - [x] plugin can export resources out for others use
 - [ ] friendly web page for managing plugin's lifecycle and configuration
 - [ ] auto reload when new plugin installed
-- [ ] more useful events emitted for plugins
-- [ ] plugin dependencies each other
+- [x] more useful events emitted for plugins
+- [x] plugin dependencies each other
 - [x] plugin settings management
 - [x] test suits and js coverage
-- [ ] modularize datahub
+- [x] modularize datahub
 
 ### plugins
 
 - [x] plugin demo
+- [ ] plugin install plugin
 - [ ] storage plugin for cloud, which is restful for persistant
 - [ ] web crawler for one site
 - [ ] user authorize plugin, including third platform support
