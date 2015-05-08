@@ -1,0 +1,28 @@
+{
+  "name": "datahub-plugin-ping",
+  "version": "1.1.1",
+  "description": "example code of datahub plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "ijse"
+  },
+  "license": "MIT",
+  "keywords": [
+    "datahub",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.coding.net:ijse/datahub-plugin-ping.git"
+  },
+  "gitHead": "611e67b51f1d123582339c29024d54e248d2c382",
+  "readme": "#datahub-plugin-ping\n",
+  "readmeFilename": "README.md",
+  "_id": "datahub-plugin-ping@1.1.1",
+  "_shasum": "b6a479b47a08d8a145f804abb7599388263aea64",
+  "_from": "git://git.coding.net/ijse/datahub-plugin-ping.git",
+  "_resolved": "git://git.coding.net/ijse/datahub-plugin-ping.git#611e67b51f1d123582339c29024d54e248d2c382"
+}
