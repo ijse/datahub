@@ -22,7 +22,7 @@
   "readme": "#datahub-plugin-ping\n",
   "readmeFilename": "README.md",
   "_id": "datahub-plugin-ping@1.1.1",
-  "_shasum": "b6a479b47a08d8a145f804abb7599388263aea64",
+  "_shasum": "a1127f9c2787de3851b229563fbb5943e923b074",
   "_from": "git://git.coding.net/ijse/datahub-plugin-ping.git",
   "_resolved": "git://git.coding.net/ijse/datahub-plugin-ping.git#611e67b51f1d123582339c29024d54e248d2c382"
 }
